@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Unfollowers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container"></div>
+
+<div class="logo">
+    <div class="icon">👻</div>
+    <h1>GhostCheck</h1>
+    <p>Find who doesn't follow back</p>
+</div>
+
+<div id="stats">
+    <p id="followingCount"></p>
+    <p id="followersCount"></p>
+    <p id="notFollowingCount"></p>
+</div>
+
+<label for="following">Select your following.json file:</label>
+<input type="file" id="following" accept=".json">
+
+<br><br>
+
+<label for="followers">Select your followers_1.json file:</label>
+<input type="file" id="followers" accept=".json">
+
+<br><br>
+
+<button id="check">Check</button>
+
+<br><br>
+
+<input 
+    type="text" 
+    id="search" 
+    placeholder="Search username..."
+>
+
+<br><br>
+
+<button id="copy">Copy All</button>
+<button id="download">Download CSV</button>
+
+<h2>People You Follow Who Don't Follow Back</h2>
+
+<ul id="results"></ul>
+
+<h2>People Following You That You Don't Follow</h2>
+
+<ul id="followersResults"></ul>
+
+<script src="script.js"></script>
+</div>
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+</body>
+</html>
